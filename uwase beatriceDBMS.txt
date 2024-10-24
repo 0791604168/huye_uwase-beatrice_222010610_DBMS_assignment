@@ -1,0 +1,262 @@
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 39
+Server version: 8.3.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database ruhande23;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use ruhande23;
+Database changed
+mysql> create table ruhande23(id int(4), first_name char(14),last_name(13),gender char(12),province char(13),district char(23),district char(12),sector char(14),cell char(34),email varchar(40));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(13),gender char(12),province char(13),district char(23),district char(12),secto' at line 1
+mysql> create table ruhande23(id int(4), first_name char(14),last_name char(13),gender char(12),province char(13),district char(23),district char(12),sector char(14),cell char(34),email varchar(40));
+ERROR 1060 (42S21): Duplicate column name 'district'
+mysql> create table ruhande23(id int(4), first_name char(14),last_name char(13),gender char(12),province char(13),district char(12),sector char(14),cell char(34),email varchar(40));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> create table ruhande23(id int(4), first_name char(14),last_name char(13),gender char(12),province char(13),district char(12),sector char(14),cell char(34),email varchar(40),tell int(10));
+ERROR 1050 (42S01): Table 'ruhande23' already exists
+mysql> show tables;
++---------------------+
+| Tables_in_ruhande23 |
++---------------------+
+| ruhande23           |
++---------------------+
+1 row in set (0.03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| batima             |
+| bit2               |
+| huye2              |
+| information_schema |
+| leader             |
+| mamba3             |
+| mysql              |
+| ones               |
+| performance_schema |
+| rhande             |
+| ruhande            |
+| ruhande18          |
+| ruhande23          |
+| sys                |
++--------------------+
+14 rows in set (0.00 sec)
+
+mysql> use ruhande;
+Database changed
+mysql> show  tables;
++-------------------+
+| Tables_in_ruhande |
++-------------------+
+| ngoma             |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> drop database ruhande;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| batima             |
+| bit2               |
+| huye2              |
+| information_schema |
+| leader             |
+| mamba3             |
+| mysql              |
+| ones               |
+| performance_schema |
+| rhande             |
+| ruhande18          |
+| ruhande23          |
+| sys                |
++--------------------+
+13 rows in set (0.00 sec)
+
+mysql> create database ruhande;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use ruhande;
+Database changed
+mysql> create table ngoma(id int(15),fname char(15),lname char(15),gender char(6),province char(10),district char(10),sector char(14),email char(15),tel char(10));
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> alter table ngoma add column cell char(10);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> insert into ngoma values(1,'kami','anna','f','south','muhanga','kamiann33@gmail.com','072459322','kiyumba');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql> insert into ngoma values(1,'kami','anna','f','south','muhanga','ndagu','kamiann33@gmail.com','072459322','kiyumba');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(2,'uwase','amina','f','north','gicumbi','sovu','uwase33@gmail.com','072459333','byimana');
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> insert into ngoma values(3,'ineza','elinest','m','east','nyagatare','rurenge','ineza3@gmail.com','078459333','rukomo');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(4,'org','petty','m','south','huye','lango','orgi3@gmail.com','078459345','tumba');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(5,'gwiza','karine','f','north','gicumbi','gatobatoba','karinee2@gmail.com','079359345','giti');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(6,'rukundo','jea','m','east','gatsibo','nkanka','rukundoe2@gmail.com','079359445','kavumu');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(7,'polline','kayiragwa','m','kigali','gatsata','kigali','kayi@gmail.com','078359445','shogwe');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(8,'dani','ishimwe','m','east','kirehe','huriro','dani@gmail.com','0783594905','munanira');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(9,'izer','ishimwe','f','west','karama','buramba','izere@gmail.com','0783588905','taba');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(10,'gani','karisa','m','west','rurindo','nyakibingo','karizae@gmail.com','0788588905','nyanza');
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> select *from ngoma;
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+
+| id   | fname   | lname     | gender | province | district  | sector     | email           | tel        | cell     |
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+
+|    1 | kami    | anna      | f      | south    | muhanga   | ndagu      | kamiann33@gmail | 072459322  | kiyumba  |
+|    2 | uwase   | amina     | f      | north    | gicumbi   | sovu       | uwase33@gmail.c | 072459333  | byimana  |
+|    3 | ineza   | elinest   | m      | east     | nyagatare | rurenge    | ineza3@gmail.co | 078459333  | rukomo   |
+|    4 | org     | petty     | m      | south    | huye      | lango      | orgi3@gmail.com | 078459345  | tumba    |
+|    5 | gwiza   | karine    | f      | north    | gicumbi   | gatobatoba | karinee2@gmail. | 079359345  | giti     |
+|    6 | rukundo | jea       | m      | east     | gatsibo   | nkanka     | rukundoe2@gmail | 079359445  | kavumu   |
+|    7 | polline | kayiragwa | m      | kigali   | gatsata   | kigali     | kayi@gmail.com  | 078359445  | shogwe   |
+|    8 | dani    | ishimwe   | m      | east     | kirehe    | huriro     | dani@gmail.com  | 0783594905 | munanira |
+|    9 | izer    | ishimwe   | f      | west     | karama    | buramba    | izere@gmail.com | 0783588905 | taba     |
+|   10 | gani    | karisa    | m      | west     | rurindo   | nyakibingo | karizae@gmail.c | 0788588905 | nyanza   |
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+
+10 rows in set (0.00 sec)
+
+mysql> select id,gender,email,tel from ngoma;
++------+--------+-----------------+------------+
+| id   | gender | email           | tel        |
++------+--------+-----------------+------------+
+|    1 | f      | kamiann33@gmail | 072459322  |
+|    2 | f      | uwase33@gmail.c | 072459333  |
+|    3 | m      | ineza3@gmail.co | 078459333  |
+|    4 | m      | orgi3@gmail.com | 078459345  |
+|    5 | f      | karinee2@gmail. | 079359345  |
+|    6 | m      | rukundoe2@gmail | 079359445  |
+|    7 | m      | kayi@gmail.com  | 078359445  |
+|    8 | m      | dani@gmail.com  | 0783594905 |
+|    9 | f      | izere@gmail.com | 0783588905 |
+|   10 | m      | karizae@gmail.c | 0788588905 |
++------+--------+-----------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> select *from ngoma where id=1;
++------+-------+-------+--------+----------+----------+--------+-----------------+-----------+---------+
+| id   | fname | lname | gender | province | district | sector | email           | tel       | cell    |
++------+-------+-------+--------+----------+----------+--------+-----------------+-----------+---------+
+|    1 | kami  | anna  | f      | south    | muhanga  | ndagu  | kamiann33@gmail | 072459322 | kiyumba |
++------+-------+-------+--------+----------+----------+--------+-----------------+-----------+---------+
+1 row in set (0.00 sec)
+
+mysql> alter table ngoma add village char(15);
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select* from ngoma;
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+---------+
+| id   | fname   | lname     | gender | province | district  | sector     | email           | tel        | cell     | village |
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+---------+
+|    1 | kami    | anna      | f      | south    | muhanga   | ndagu      | kamiann33@gmail | 072459322  | kiyumba  | NULL    |
+|    2 | uwase   | amina     | f      | north    | gicumbi   | sovu       | uwase33@gmail.c | 072459333  | byimana  | NULL    |
+|    3 | ineza   | elinest   | m      | east     | nyagatare | rurenge    | ineza3@gmail.co | 078459333  | rukomo   | NULL    |
+|    4 | org     | petty     | m      | south    | huye      | lango      | orgi3@gmail.com | 078459345  | tumba    | NULL    |
+|    5 | gwiza   | karine    | f      | north    | gicumbi   | gatobatoba | karinee2@gmail. | 079359345  | giti     | NULL    |
+|    6 | rukundo | jea       | m      | east     | gatsibo   | nkanka     | rukundoe2@gmail | 079359445  | kavumu   | NULL    |
+|    7 | polline | kayiragwa | m      | kigali   | gatsata   | kigali     | kayi@gmail.com  | 078359445  | shogwe   | NULL    |
+|    8 | dani    | ishimwe   | m      | east     | kirehe    | huriro     | dani@gmail.com  | 0783594905 | munanira | NULL    |
+|    9 | izer    | ishimwe   | f      | west     | karama    | buramba    | izere@gmail.com | 0783588905 | taba     | NULL    |
+|   10 | gani    | karisa    | m      | west     | rurindo   | nyakibingo | karizae@gmail.c | 0788588905 | nyanza   | NULL    |
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+---------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set village='mataba' where id=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set village='ubwiza' where id=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select *from ngoma;
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+---------+
+| id   | fname   | lname     | gender | province | district  | sector     | email           | tel        | cell     | village |
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+---------+
+|    1 | kami    | anna      | f      | south    | muhanga   | ndagu      | kamiann33@gmail | 072459322  | kiyumba  | mataba  |
+|    2 | uwase   | amina     | f      | north    | gicumbi   | sovu       | uwase33@gmail.c | 072459333  | byimana  | ubwiza  |
+|    3 | ineza   | elinest   | m      | east     | nyagatare | rurenge    | ineza3@gmail.co | 078459333  | rukomo   | NULL    |
+|    4 | org     | petty     | m      | south    | huye      | lango      | orgi3@gmail.com | 078459345  | tumba    | NULL    |
+|    5 | gwiza   | karine    | f      | north    | gicumbi   | gatobatoba | karinee2@gmail. | 079359345  | giti     | NULL    |
+|    6 | rukundo | jea       | m      | east     | gatsibo   | nkanka     | rukundoe2@gmail | 079359445  | kavumu   | NULL    |
+|    7 | polline | kayiragwa | m      | kigali   | gatsata   | kigali     | kayi@gmail.com  | 078359445  | shogwe   | NULL    |
+|    8 | dani    | ishimwe   | m      | east     | kirehe    | huriro     | dani@gmail.com  | 0783594905 | munanira | NULL    |
+|    9 | izer    | ishimwe   | f      | west     | karama    | buramba    | izere@gmail.com | 0783588905 | taba     | NULL    |
+|   10 | gani    | karisa    | m      | west     | rurindo   | nyakibingo | karizae@gmail.c | 0788588905 | nyanza   | NULL    |
++------+---------+-----------+--------+----------+-----------+------------+-----------------+------------+----------+---------+
+10 rows in set (0.00 sec)
+
+mysql> alter table ngoma drop sector;
+Query OK, 10 rows affected (0.04 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select *from ngoma;
++------+---------+-----------+--------+----------+-----------+-----------------+------------+----------+---------+
+| id   | fname   | lname     | gender | province | district  | email           | tel        | cell     | village |
++------+---------+-----------+--------+----------+-----------+-----------------+------------+----------+---------+
+|    1 | kami    | anna      | f      | south    | muhanga   | kamiann33@gmail | 072459322  | kiyumba  | mataba  |
+|    2 | uwase   | amina     | f      | north    | gicumbi   | uwase33@gmail.c | 072459333  | byimana  | ubwiza  |
+|    3 | ineza   | elinest   | m      | east     | nyagatare | ineza3@gmail.co | 078459333  | rukomo   | NULL    |
+|    4 | org     | petty     | m      | south    | huye      | orgi3@gmail.com | 078459345  | tumba    | NULL    |
+|    5 | gwiza   | karine    | f      | north    | gicumbi   | karinee2@gmail. | 079359345  | giti     | NULL    |
+|    6 | rukundo | jea       | m      | east     | gatsibo   | rukundoe2@gmail | 079359445  | kavumu   | NULL    |
+|    7 | polline | kayiragwa | m      | kigali   | gatsata   | kayi@gmail.com  | 078359445  | shogwe   | NULL    |
+|    8 | dani    | ishimwe   | m      | east     | kirehe    | dani@gmail.com  | 0783594905 | munanira | NULL    |
+|    9 | izer    | ishimwe   | f      | west     | karama    | izere@gmail.com | 0783588905 | taba     | NULL    |
+|   10 | gani    | karisa    | m      | west     | rurindo   | karizae@gmail.c | 0788588905 | nyanza   | NULL    |
++------+---------+-----------+--------+----------+-----------+-----------------+------------+----------+---------+
+10 rows in set (0.00 sec)
+
+mysql> select *from ngoma where id=2 and district='gicumbi';
++------+-------+-------+--------+----------+----------+-----------------+-----------+---------+---------+
+| id   | fname | lname | gender | province | district | email           | tel       | cell    | village |
++------+-------+-------+--------+----------+----------+-----------------+-----------+---------+---------+
+|    2 | uwase | amina | f      | north    | gicumbi  | uwase33@gmail.c | 072459333 | byimana | ubwiza  |
++------+-------+-------+--------+----------+----------+-----------------+-----------+---------+---------+
+1 row in set (0.00 sec)
+
+mysql> select *from ngoma where id=1 or gender='f';
++------+-------+---------+--------+----------+----------+-----------------+------------+---------+---------+
+| id   | fname | lname   | gender | province | district | email           | tel        | cell    | village |
++------+-------+---------+--------+----------+----------+-----------------+------------+---------+---------+
+|    1 | kami  | anna    | f      | south    | muhanga  | kamiann33@gmail | 072459322  | kiyumba | mataba  |
+|    2 | uwase | amina   | f      | north    | gicumbi  | uwase33@gmail.c | 072459333  | byimana | ubwiza  |
+|    5 | gwiza | karine  | f      | north    | gicumbi  | karinee2@gmail. | 079359345  | giti    | NULL    |
+|    9 | izer  | ishimwe | f      | west     | karama   | izere@gmail.com | 0783588905 | taba    | NULL    |
++------+-------+---------+--------+----------+----------+-----------------+------------+---------+---------+
+4 rows in set (0.00 sec)
+
+mysql>
